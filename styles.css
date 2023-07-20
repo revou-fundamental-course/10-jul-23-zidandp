@@ -1,0 +1,105 @@
+/* Tambahkan gaya CSS untuk tampilan kalkulator */
+body {
+    font-family: Open Sans, sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #191919;
+    color: #fff;
+    position: relative;
+}
+
+.calcu-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #313131;
+    color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="number"] {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 18px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    display: none;
+}
+
+#bmiResult {
+    font-size: 38px; /* Ukuran teks besar */
+    font-weight: normal; /* Tidak menggunakan gaya tebal */
+}
+
+#downloadButton {
+    display: none;
+    margin-top: 20px;
+}
+
+
+button:disabled {
+    background-color: #828282;
+    cursor: not-allowed;
+}
+
+/* Gaya khusus untuk input yang tidak valid */
+input.invalid {
+    border-color: red;
+}
+
+.input-container {
+    position: relative; /* Tambahkan position: relative pada elemen yang mengandung input dan pesan error */
+}
+
+/* Gaya khusus untuk label pesan error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -24px; /* Jarak pesan error dari atas input */
+    display: flex;
+    align-items: center;
+}
+
+.error-icon {
+    margin-right: 5px; /* Spasi antara ikon dan teks */
+}
+
+.watermark {
+    position: absolute; /* Menggunakan posisi tetap untuk meletakkan di bagian bawah */
+    bottom: 4px; /* Jarak dari bawah halaman */
+    left: 50%; /* Meletakkan di tengah horizontal */
+    transform: translateX(-50%); /* Agar berada tepat di tengah */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5); /* Warna dan transparansi watermark */
+}

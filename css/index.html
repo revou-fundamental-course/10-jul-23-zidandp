@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Menghubungkan ke Google Fonts untuk menggunakan font Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Menghubungkan ke file eksternal styles.css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Kontainer utama -->
+    <div class="container">
+        <h2>Kalkulator BMI</h2>
+        <p>Berat badan ideal adalah keinginan semua orang karena
+            merupakan salah satu cara untuk menjaga kesehatannya. 
+            Dengan kalkulator ini, kamu bisa mengetahui bagaimana kondisi
+            berat badanmu.<br> Tunggu apalagi, Yuk! isi kolom yang dibutuhkan
+            untuk melihat kondisi berat badanmu!
+        </p>
+
+        <!-- Watermark sebagai tanda pembuat kalkulator -->
+        <div class="watermark">Created by Zidan Dwi Permana</div>
+
+        <!-- Kontainer untuk kalkulator BMI -->
+        <div class="calcu-container">
+            <label for="gender">Jenis Kelamin:</label>
+            <!-- Pilihan jenis kelamin -->
+            <select id="gender">
+                <option value="male">Laki-laki</option>
+                <option value="female">Perempuan</option>
+            </select>
+            <label for="age">Usia:</label>
+            <!-- Input untuk mengisi usia -->
+            <div class="input-container">
+                <input type="number" id="age" placeholder="Masukkan usia (Angka harus lebih dari 0)" min="0" required>
+                <span class="error-message" id="ageError">
+                    <span class="error-icon">⚠️</span> Harus Diisi
+                </span>
+            </div>
+            <label for="weight">Berat (kg):</label>
+            <!-- Input untuk mengisi berat badan -->
+            <div class="input-container">
+                <input type="number" id="weight" placeholder="Masukkan berat badan (kg) (Angka harus lebih dari 0)" min="0" step="0.01" required>
+                <span class="error-message" id="weightError">
+                    <span class="error-icon">⚠️</span> Harus Diisi
+                </span>
+            </div>
+            <label for="height">Tinggi (cm)</label>
+            <!-- Input untuk mengisi tinggi badan -->
+            <div class="input-container">
+                <input type="number" id="height" placeholder="Masukkan tinggi badan (cm) (Angka harus lebih dari 0)" min="0" step="0.01" required>
+                <span class="error-message" id="heightError">
+                    <span class="error-icon">⚠️</span> Harus Diisi
+                </span>
+            </div>
+
+            <!-- Tombol untuk menghitung BMI dan reset form -->
+            <button onclick="calculateBMI()" id="calculateButton" disabled>Hitung</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+
+        <!-- Keterangan mengenai penggunaan kalkulator BMI -->
+        <p>Kalkulator ini hanya digunakan untuk orang dewasa (Wanita hamil 
+            dan menyusui tidak diperbolehkan menggunakan kalkulator ini). Tidak ada 
+            tindakan yang harus diambil berdasarkan hasil nilainya  selain berkonsultasi dengan 
+            orang yang bersertifikasi seperti dokter. </p>
+
+        <!-- Kotak hasil BMI -->
+        <div id="result">
+            <h3>Hasil BMI Anda:</h3>
+            <p id="bmiResult"></p>
+            <p id="bmiStatus"></p>
+            <p id="bmiAdvice"></p>
+            <button id="downloadButton" onclick="downloadResult()">Download Hasil</button>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke file eksternal script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
